@@ -55,9 +55,13 @@ const config = {
 				sm: "calc(var(--radius) - 4px)"
 			},
 			fontFamily: {
-				sans: [...fontFamily.sans]
-			}
-		}
+				sans: ['"Wanted Sans Std Variable", system-ui, sans-serif',
+          {
+            fontFeatureSettings: '"calt", "clig", "locl", "ccmp", "ss07", "cv10", "cv11"',
+          },
+        ],
+			},
+		},
 	},
 };
 

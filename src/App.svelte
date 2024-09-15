@@ -1,3 +1,40 @@
+<script lang="ts">
+  import Menu from 'lucide-svelte/icons/menu';
+  import Search from 'lucide-svelte/icons/search';
+  import * as Sheet from "$lib/components/ui/sheet";
+  import { Button } from "$lib/components/ui/button/index.js";
+</script>
+ 
+<Sheet.Root>
+ <Sheet.Trigger asChild let:builder>
+  <nav class="flex items-center justify-between flex-nowrap bg-white dark:bg-[#101010] sticky z-10 top-0 p-2">
+  <div class="flex items-center text-black dark:text-white mr-6">
+    <Button builders={[builder]} variant="ghost"
+    size="icon" aria-label="Open menu">
+      <Menu />
+    </Button>
+    <span class="font-medium text-xl ml-2.5">Kruistz's Page</span>
+    </div>
+    <Button variant="ghost" size="icon" aria-label="Search">
+      <Search />
+    </Button>
+</nav>
+ </Sheet.Trigger>
+ <Sheet.Content side="left">
+  <Sheet.Header>
+   <Sheet.Title>Edit profile</Sheet.Title>
+   <Sheet.Description>
+    Make changes to your profile here. Click save when you're done.
+   </Sheet.Description>
+  </Sheet.Header>
+  <Sheet.Footer>
+   <Sheet.Close asChild let:builder>
+    <Button builders={[builder]} type="submit">Save changes</Button>
+   </Sheet.Close>
+  </Sheet.Footer>
+ </Sheet.Content>
+</Sheet.Root>
+
 <section class="text-gray-600">
   <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
     <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0">
